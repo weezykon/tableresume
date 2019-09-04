@@ -49,3 +49,49 @@ img{
 .brown{
     color: #73445d;
 }
+
+#contactme{
+    width: 40%;
+}
+
+.form-control{
+    border: none;
+    width: 100%;
+    border-bottom: 2px solid #3686cc;
+    padding: 10px;
+    background: #f7f7f7;
+}
+
+.btn-blue{
+    width: 50%;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    background: #4c93d1;
+    border-radius: 5px;
+}
+
+.red{
+    color: red;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+form{
+    margin-bottom: 10vh;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover{
+    font-weight: 800;
+}

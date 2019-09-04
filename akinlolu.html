@@ -16,6 +16,7 @@
                     <span class="bold">Github:</span>  Weezykon<br>
                     (+234) 8041160412
                 </p>
+                <a href="#contactme">Contact Me</a>
             </td>
             <td>
                 <img src="https://res.cloudinary.com/dqqrgidob/image/upload/v1566854238/bkzAHsJ2_400x400_1_z8dm6t.jpg" width="150" border-radius="50%" />
@@ -233,5 +234,49 @@
             </td>
         </tr>
     </table>
+    <form>
+        <table id="contactme" cellspacing="10">
+            <tr class="form-group">
+                <td>
+                    <h2>Contact Me</h2>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <input type="text" class="form-control" disabled="disabled" placeholder="To: Akinbode Weezykon" />
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Enter Fullname" />
+                    <p class="red hide" id="fullnameError">Name should be more than 4 Character</p>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email Address" />
+                    <p class="red hide" id="emailError">Email is Invalid</p>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Enter Title" />
+                    <p class="red hide" id="titleError">Title should be more than 4 Character</p>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <textarea name="message" id="message" cols="30" rows="3" placeholder="Enter Message" class="form-control"></textarea>
+                    <p class="red hide" id="messageError">Message should be more than 4 Character</p>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <button id="submitButton" class="btn-blue" onclick="validate()">Contact</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script src="script.js"></script>
 </body>
 </html>
