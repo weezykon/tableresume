@@ -72,7 +72,10 @@ img{
 }
 
 .red{
+    background: #eee;
     color: red;
+    padding: 5px;
+    border: 1px solid;
 }
 
 .show{
@@ -94,4 +97,18 @@ a{
 
 a:hover{
     font-weight: 800;
+}
+
+.alert-danger{
+    padding: 20px;
+    background: #722f37;
+    color: #fff;
+    font-size: 15px;
+}
+
+.alert-success{
+    padding: 20px;
+    background: #056608;
+    color: #fff;
+    font-size: 15px;
 }
