@@ -65,6 +65,8 @@ document.getElementById("submitButton").addEventListener("click", function(event
     if(!validateFullname || !validateEmail || !validateTitle || !validateMessage){
         alert('fix errors');
     }else{
+        document.getElementById("submitButton").disabled = true;
+        document.getElementById("submitButton").innerHTML = "Please Wait...";
         var data = {
             email: document.getElementById('email').value,
             fullname: document.getElementById('fullname').value,
@@ -74,16 +76,21 @@ document.getElementById("submitButton").addEventListener("click", function(event
         event.preventDefault();
 
         console.log(data);
-        var url = 'http://localhost/tableresume/contact.php';
+        var url = 'https://resumetable.herokuapp.com/';
 
-        fetch(url, {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-            headers:{
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json())
-        .then(response => console.log('Success:', JSON.stringify(response)))
-        .catch(error => console.error('Error:', error));
+        let promise = $.post('https://resumetable.herokuapp.com/', data);
+        promise.then(
+            data => [
+                alert('Message Sent, You will be contacted shortly'),enbaleBtn(),document.getElementById("form").reset()
+            ],
+            error => [
+                document.querySelector('#submitError').classList.remove('hide'), enbaleBtn()
+            ]
+        );
+
+        let enbaleBtn = () => {
+            document.getElementById("submitButton").disabled = false;
+            document.getElementById("submitButton").innerHTML = "Contact Me";
+        }
     }
 });
