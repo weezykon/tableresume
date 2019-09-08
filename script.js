@@ -61,11 +61,29 @@ const validateMessage = (e) => {
 const messageEvent = document.getElementById('message');
 messageEvent.addEventListener('keyup', validateMessage);
 
-function validate(){
-    if(validateFullname || validateEmail || validateTitle || validateMessage){
+document.getElementById("submitButton").addEventListener("click", function(event){
+    if(!validateFullname || !validateEmail || !validateTitle || !validateMessage){
         alert('fix errors');
     }else{
-        alert('Loading....');
-        console.log('yes');
+        var data = {
+            email: document.getElementById('email').value,
+            fullname: document.getElementById('fullname').value,
+            title: document.getElementById('title').value,
+            message: document.getElementById('message').value,
+        }
+        event.preventDefault();
+
+        console.log(data);
+        var url = 'http://localhost/tableresume/contact.php';
+
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+        .then(response => console.log('Success:', JSON.stringify(response)))
+        .catch(error => console.error('Error:', error));
     }
-}
+});
