@@ -81,10 +81,10 @@ document.getElementById("submitButton").addEventListener("click", function(event
         let promise = $.post('https://resumetable.herokuapp.com/submit.php', data);
         promise.then(
             data => [
-                document.querySelector('#submitSuccess').classList.remove('hide'),enbaleBtn(),document.getElementById("form").reset()
+                document.querySelector('#submitSuccess').classList.remove('hide'),document.querySelector('#submitError').classList.add('hide'),enbaleBtn(),document.getElementById("form").reset()
             ],
             error => [
-                document.querySelector('#submitError').classList.remove('hide'), enbaleBtn()
+                document.querySelector('#submitError').classList.remove('hide'),document.querySelector('#submitSuccess').classList.add('hide'),enbaleBtn()
             ]
         );
 
