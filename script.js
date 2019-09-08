@@ -81,7 +81,7 @@ document.getElementById("submitButton").addEventListener("click", function(event
         let promise = $.post('https://resumetable.herokuapp.com/submit.php', data);
         promise.then(
             data => [
-                alert('Message Sent, You will be contacted shortly'),enbaleBtn(),document.getElementById("form").reset()
+                document.querySelector('#submitSuccess').classList.remove('hide'),enbaleBtn(),document.getElementById("form").reset()
             ],
             error => [
                 document.querySelector('#submitError').classList.remove('hide'), enbaleBtn()
