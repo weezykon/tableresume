@@ -78,7 +78,7 @@ document.getElementById("submitButton").addEventListener("click", function(event
         console.log(data);
         var url = 'https://resumetable.herokuapp.com/';
 
-        let promise = $.post('https://resumetable.herokuapp.com/', data);
+        let promise = $.post('https://resumetable.herokuapp.com/submit.php', data);
         promise.then(
             data => [
                 alert('Message Sent, You will be contacted shortly'),enbaleBtn(),document.getElementById("form").reset()
