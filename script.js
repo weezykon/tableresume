@@ -75,7 +75,7 @@ document.getElementById("submitButton").addEventListener("click", function(event
         }
         event.preventDefault();
 
-        console.log(data);
+        // console.log(data);
         var url = 'https://resumetable.herokuapp.com/';
 
         let promise = $.post('https://resumetable.herokuapp.com/submit.php', data);
